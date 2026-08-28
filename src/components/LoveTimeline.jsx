@@ -128,16 +128,6 @@ function LoveTimeline({ photos }) {
               className="text-yellow-300"
             />
 
-            <p
-              className="
-                text-xs
-                uppercase
-                tracking-[0.35em]
-                text-yellow-200/70
-              "
-            >
-              Nuestra historia
-            </p>
 
             <div className="h-px w-10 bg-yellow-300/25" />
           </div>
