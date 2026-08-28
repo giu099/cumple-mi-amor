@@ -376,16 +376,6 @@ function LoveCounters() {
               className="text-yellow-300"
             />
 
-            <p
-              className="
-                text-xs
-                uppercase
-                tracking-[0.3em]
-                text-yellow-200/70
-              "
-            >
-              Nuestro tiempo
-            </p>
 
             <div className="h-px w-9 bg-yellow-300/30" />
           </div>
@@ -414,20 +404,6 @@ function LoveCounters() {
             también se cuenta en días
           </p>
 
-          <p
-            className="
-              font-elegant
-              mx-auto
-              mt-5
-              max-w-xl
-              text-lg
-              leading-8
-              text-violet-100/50
-            "
-          >
-            Dos fechas que para mí cambiaron completamente
-            el significado del tiempo.
-          </p>
         </motion.div>
 
         {/* =========================================

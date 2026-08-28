@@ -137,16 +137,6 @@ function ThingsILove({ photos }) {
               className="text-yellow-300"
             />
 
-            <p
-              className="
-                text-xs
-                uppercase
-                tracking-[0.35em]
-                text-yellow-200/65
-              "
-            >
-              Pequeñas cosas
-            </p>
 
             <div className="h-px w-10 bg-yellow-300/25" />
           </div>
