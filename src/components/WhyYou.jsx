@@ -49,7 +49,7 @@ function WhyYou({ photos }) {
       title: "¿Por que vos?",
 
       text:
-        "Porque llegaste a mi vida de una manera diferente, despacio y con amor. Porque mas alla de las peleas y discusiones siempre supimos seguir adelante y seguir eligiendonos el uno al otro. Podria seguir escribiendo muchisimas razones, pero al final siempre termino llegando a la misma respuesta: te eligiria simplemente porque sos vos. ",
+        "Porque llegaste a mi vida de una manera diferente, despacio y con amor. Porque mas alla de las peleas y discusiones siempre supimos seguir adelante y seguir eligiendonos el uno al otro. Porque con una sonrisa me alegras los dias. Porque no hay nadie mas atenta y cariñosa que vos. Porque con solo un abrazo calmas todo. Podria seguir escribiendo muchisimas razones, pero al final siempre termino llegando a la misma respuesta: te eligiria simplemente porque sos vos. ",
 
       image: photos[3],
 
@@ -182,7 +182,7 @@ function WhyYou({ photos }) {
               md:text-3xl
             "
           >
-            porque no puede ser de otra manera
+            Porque no puede ser de otra manera
           </p>
 
           <p
@@ -277,7 +277,7 @@ function WhyYou({ photos }) {
                       shadow-xl
                     "
                   >
-                    {/* 
+                    {/*
                       IMPORTANTE:
                       mantenemos exactamente el mismo
                       tamaño de la card.
@@ -399,6 +399,7 @@ function WhyYou({ photos }) {
                     className="
                       font-elegant
                       mt-6
+                      text-justify
                       text-lg
                       leading-8
                       text-violet-100/65
@@ -452,7 +453,7 @@ function WhyYou({ photos }) {
               mt-5
               text-4xl
               text-white
-              md:text-6xl
+              md:text-5xl
             "
           >
             Si tuviera que elegir otra vez...
@@ -464,7 +465,7 @@ function WhyYou({ photos }) {
               mt-2
               text-5xl
               text-violet-300
-              md:text-7xl
+              md:text-4xl
             "
           >
             volverías a ser vos.

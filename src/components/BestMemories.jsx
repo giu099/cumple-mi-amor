@@ -6,9 +6,9 @@ const ease = [0.22, 1, 0.36, 1];
 function BestMemories({ photos }) {
   const memories = [
     {
-      title: "La primera vez que tomamos mates",
+      title: "La primera vez que nos juntamos",
       text:
-        "Nunca me voy a olvidar de la primera vez que nos juntamos a tomar mates. Ese día volví a mi casa demasiado contento. No podía entender cómo algo tan simple me hacía tan feliz, pero después me di cuenta de que había algo más, y ese algo más eras vos. Le agregás color a cada parte de mi vida.",
+        "Nunca me voy a olvidar de la primera vez que nos juntamos a tomar mates, solos, nosotros 2. Ese día volví a mi casa demasiado contento. No podía entender cómo algo tan simple me hacía tan feliz, pero después me di cuenta de que había algo más, y ese algo más eras vos. Le agregás ese color, esa esencia, ese toque tuyo que hace que todo lo que haga con vos sea mas lindo.",
       image: photos[0],
       caption: "El comienzo de algo más ♡",
       rotation: -2,
@@ -26,7 +26,7 @@ function BestMemories({ photos }) {
     {
       title: "Cuando te pedí que fueras mi novia",
       text:
-        "Y también de cuando te pedí que fueras mi novia. Estaba tan nervioso y tan ansioso por que todo saliera como lo había planeado, que los días anteriores no podía dormir de la emoción.",
+        "Y también de cuando te pedí que fueras mi novia. Fue la mejor decision que pude haber tomado. Estaba tan nervioso y tan ansioso por que todo saliera como lo había planeado, que los días anteriores no podía dormir de la emoción. Queria que cada detalle este perfecto para poder ver esa sonrisa tan bonita que tenes. Me encanta poder decir que sos mi novia",
       image: photos[2],
       caption: "El día que empezamos a ser nosotros ♡",
       rotation: -2,

@@ -103,18 +103,6 @@ function ThankYou({ photos }) {
             Gracias
           </h2>
 
-          <p
-            className="
-              font-elegant
-              mt-4
-              text-lg
-              italic
-              text-violet-200/55
-              md:text-xl
-            "
-          >
-            por volver a aparecer en mi vida
-          </p>
         </motion.div>
 
         {/* CONTENIDO */}
