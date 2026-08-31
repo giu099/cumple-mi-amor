@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Sparkles } from "lucide-react";
+import { Heart } from "lucide-react";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -35,13 +35,6 @@ function WhyYou({ photos }) {
 
       image: photos[2],
 
-      /*
-        Esta es la foto que aparecía corrida
-        en la captura.
-
-        Movemos solamente la imagen,
-        NO cambiamos el tamaño de la card.
-      */
       objectPosition: "62% 45%",
     },
 
@@ -277,12 +270,6 @@ function WhyYou({ photos }) {
                       shadow-xl
                     "
                   >
-                    {/*
-                      IMPORTANTE:
-                      mantenemos exactamente el mismo
-                      tamaño de la card.
-                    */}
-
                     <div className="aspect-[4/5] overflow-hidden">
                       <img
                         src={reason.image}
@@ -304,7 +291,7 @@ function WhyYou({ photos }) {
                       />
                     </div>
 
-                    {/* degradado */}
+                    {/* DEGRADADO */}
 
                     <div
                       className="
@@ -318,7 +305,7 @@ function WhyYou({ photos }) {
                       "
                     />
 
-                    {/* corazón */}
+                    {/* CORAZÓN FOTO */}
 
                     <Heart
                       size={18}
@@ -361,31 +348,50 @@ function WhyYou({ photos }) {
                       : "md:order-1 md:text-right"
                   }
                 >
+                  {/* =================================
+                      LÍNEAS + CORAZÓN
+                  ================================== */}
+
                   <div
-                    className={`
+                    className="
+                      mb-1
                       flex
                       items-center
+                      justify-center
                       gap-3
-
-                      ${
-                        imageLeft
-                          ? ""
-                          : "md:justify-end"
-                      }
-                    `}
+                    "
                   >
-                    <Sparkles
-                      size={14}
-                      className="text-yellow-300"
+                    <div
+                      className="
+                        h-px
+                        w-12
+                        bg-yellow-300/30
+                      "
                     />
 
-                    <div className="h-px w-10 bg-yellow-300/25" />
+                    <Heart
+                      size={14}
+                      fill="currentColor"
+                      className="
+                        text-pink-300
+                      "
+                    />
+
+                    <div
+                      className="
+                        h-px
+                        w-12
+                        bg-yellow-300/30
+                      "
+                    />
                   </div>
+
+                  {/* TÍTULO */}
 
                   <h3
                     className="
                       font-letter
-                      mt-5
+                      text-center
                       text-4xl
                       leading-tight
                       text-white
@@ -394,6 +400,8 @@ function WhyYou({ photos }) {
                   >
                     {reason.title}
                   </h3>
+
+                  {/* TEXTO */}
 
                   <p
                     className="
@@ -444,7 +452,10 @@ function WhyYou({ photos }) {
           <Heart
             size={20}
             fill="currentColor"
-            className="mx-auto text-pink-300"
+            className="
+              mx-auto
+              text-pink-300
+            "
           />
 
           <p
@@ -453,7 +464,7 @@ function WhyYou({ photos }) {
               mt-5
               text-4xl
               text-white
-              md:text-5xl
+              md:text-6xl
             "
           >
             Si tuviera que elegir otra vez...
@@ -465,7 +476,7 @@ function WhyYou({ photos }) {
               mt-2
               text-5xl
               text-violet-300
-              md:text-4xl
+              md:text-7xl
             "
           >
             volverías a ser vos.

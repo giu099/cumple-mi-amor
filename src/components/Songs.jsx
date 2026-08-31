@@ -14,7 +14,6 @@ import {
   Music2,
   PauseCircle,
   PlayCircle,
-  Sparkles,
 } from "lucide-react";
 
 import { songs } from "../data/siteData";
@@ -22,10 +21,10 @@ import { songs } from "../data/siteData";
 const ease = [0.22, 1, 0.36, 1];
 
 /* =========================================================
-   CANCIONES
+   CANCIONES EXTRA
 ========================================================= */
 
-const songsWithCrayola = [
+const songsWithExtras = [
   ...songs,
 
   {
@@ -39,9 +38,45 @@ const songsWithCrayola = [
 
     spotifyUrl:
       "https://open.spotify.com/track/6cWhEExHUKZR3boz4yC2Mf",
+  },
 
-    message:
-      "Otra de esas canciones que inevitablemente me hacen pensar en vos.",
+  {
+    title: "El Trato",
+    artist: "Los del Fuego",
+
+    cover: "/images/song-10.jpg",
+
+    spotifyId:
+      "5RTIOIav43mQw3TpqQoVMm",
+
+    spotifyUrl:
+      "https://open.spotify.com/track/5RTIOIav43mQw3TpqQoVMm",
+  },
+
+  {
+    title: "Sabes",
+    artist: "Los del Fuego",
+
+    cover: "/images/song-11.jpg",
+
+    spotifyId:
+      "2gxI4c72YWxgVO32PrL9bZ",
+
+    spotifyUrl:
+      "https://open.spotify.com/track/2gxI4c72YWxgVO32PrL9bZ",
+  },
+
+  {
+    title: "Puñaladas",
+    artist: "Lauta, Amigo de Artistas, Tote",
+
+    cover: "/images/song-12.jpg",
+
+    spotifyId:
+      "53QqcQJy2khVsmQpyNgV0Q",
+
+    spotifyUrl:
+      "https://open.spotify.com/track/53QqcQJy2khVsmQpyNgV0Q",
   },
 ];
 
@@ -112,6 +147,27 @@ const themeById = {
     accent: "#FFF2D8",
     soft: "#FB923C",
   },
+
+  "5RTIOIav43mQw3TpqQoVMm": {
+    from: "#5B1717",
+    to: "#1F0909",
+    accent: "#FFD5A5",
+    soft: "#B45309",
+  },
+
+  "2gxI4c72YWxgVO32PrL9bZ": {
+    from: "#243B53",
+    to: "#0B1520",
+    accent: "#D5E7F5",
+    soft: "#3B82A0",
+  },
+
+  "53QqcQJy2khVsmQpyNgV0Q": {
+    from: "#5A3D2B",
+    to: "#1B1210",
+    accent: "#F4DEC4",
+    soft: "#A36B47",
+  },
 };
 
 /* =========================================================
@@ -123,7 +179,7 @@ function Songs({
   onResumeBackground,
 }) {
   const songsWithTheme = useMemo(() => {
-    return songsWithCrayola.map((song) => ({
+    return songsWithExtras.map((song) => ({
       ...song,
 
       theme:
@@ -150,11 +206,6 @@ function Songs({
   ========================================================= */
 
   const togglePlayer = () => {
-    /*
-      Si Spotify ya estaba abierto:
-      lo cerramos y vuelve Bruno Mars.
-    */
-
     if (showPlayer) {
       setShowPlayer(false);
 
@@ -162,11 +213,6 @@ function Songs({
 
       return;
     }
-
-    /*
-      Si lo vamos a abrir:
-      primero pausamos Bruno Mars.
-    */
 
     onPauseBackground?.();
 
@@ -391,24 +437,6 @@ function Songs({
             <ChevronLeft size={20} />
           </button>
 
-          <p
-            className="
-              text-[10px]
-              uppercase
-              tracking-[0.22em]
-              text-violet-200/40
-            "
-          >
-            Canción{" "}
-            {String(
-              currentIndex + 1
-            ).padStart(2, "0")}
-            {" de "}
-            {String(
-              songsWithTheme.length
-            ).padStart(2, "0")}
-          </p>
-
           <button
             type="button"
             onClick={goToNext}
@@ -538,33 +566,6 @@ function Songs({
                   md:text-left
                 "
               >
-                <div
-                  className="
-                    mb-4
-                    flex
-                    items-center
-                    justify-center
-                    gap-2
-                    md:justify-start
-                  "
-                >
-                  <Sparkles
-                    size={14}
-                    style={{
-                      color:
-                        currentSong.theme.accent,
-                    }}
-                  />
-
-                  <div
-                    className="h-px w-10"
-                    style={{
-                      backgroundColor:
-                        `${currentSong.theme.accent}55`,
-                    }}
-                  />
-                </div>
-
                 <h3
                   className="
                     font-letter
