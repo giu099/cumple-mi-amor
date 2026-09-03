@@ -1,5 +1,6 @@
 import {
   useCallback,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -21,7 +22,7 @@ import { songs } from "../data/siteData";
 const ease = [0.22, 1, 0.36, 1];
 
 /* =========================================================
-   CANCIONES EXTRA
+   CANCIONES
 ========================================================= */
 
 const songsWithExtras = [
@@ -30,12 +31,8 @@ const songsWithExtras = [
   {
     title: "Crayola",
     artist: "Danny Ocean",
-
     cover: "/images/song-09.jpg",
-
-    spotifyId:
-      "6cWhEExHUKZR3boz4yC2Mf",
-
+    spotifyId: "6cWhEExHUKZR3boz4yC2Mf",
     spotifyUrl:
       "https://open.spotify.com/track/6cWhEExHUKZR3boz4yC2Mf",
   },
@@ -43,12 +40,8 @@ const songsWithExtras = [
   {
     title: "El Trato",
     artist: "Los del Fuego",
-
     cover: "/images/song-10.jpg",
-
-    spotifyId:
-      "5RTIOIav43mQw3TpqQoVMm",
-
+    spotifyId: "5RTIOIav43mQw3TpqQoVMm",
     spotifyUrl:
       "https://open.spotify.com/track/5RTIOIav43mQw3TpqQoVMm",
   },
@@ -56,12 +49,8 @@ const songsWithExtras = [
   {
     title: "Sabes",
     artist: "Los del Fuego",
-
     cover: "/images/song-11.jpg",
-
-    spotifyId:
-      "2gxI4c72YWxgVO32PrL9bZ",
-
+    spotifyId: "2gxI4c72YWxgVO32PrL9bZ",
     spotifyUrl:
       "https://open.spotify.com/track/2gxI4c72YWxgVO32PrL9bZ",
   },
@@ -69,19 +58,61 @@ const songsWithExtras = [
   {
     title: "Puñaladas",
     artist: "Lauta, Amigo de Artistas, Tote",
-
     cover: "/images/song-12.jpg",
-
-    spotifyId:
-      "53QqcQJy2khVsmQpyNgV0Q",
-
+    spotifyId: "53QqcQJy2khVsmQpyNgV0Q",
     spotifyUrl:
       "https://open.spotify.com/track/53QqcQJy2khVsmQpyNgV0Q",
+  },
+
+  {
+    title: "Hecha Pa' Mí",
+    artist: "Grupo Frontera",
+    cover: "/images/song-13.jpg",
+    spotifyId: "3AIVCSqTfDX9NxStqhi80S",
+    spotifyUrl:
+      "https://open.spotify.com/track/3AIVCSqTfDX9NxStqhi80S",
+  },
+
+  {
+    title: "Me Voy Enamorando - Remix",
+    artist: "Chino & Nacho, Farruko",
+    cover: "/images/song-14.jpg",
+    spotifyId: "0SUukeNYkHMk8bxwgGQKJa",
+    spotifyUrl:
+      "https://open.spotify.com/track/0SUukeNYkHMk8bxwgGQKJa",
+  },
+
+  {
+    title: "Te Vi",
+    artist: "Piso 21, Micro TDH",
+    cover: "/images/song-15.jpg",
+    spotifyId: "059bcIhyc2SBwm6sw2AZzd",
+    spotifyUrl:
+      "https://open.spotify.com/track/059bcIhyc2SBwm6sw2AZzd",
+  },
+
+  {
+    title: "Tú y Yo",
+    artist: "La Misma Gente",
+    cover: "/images/song-16.jpg",
+    spotifyId: "17LdmV5cIcTvxB0O18tD2Z",
+    spotifyUrl:
+      "https://open.spotify.com/track/17LdmV5cIcTvxB0O18tD2Z",
+  },
+
+  {
+    title: "No Me Importa el Dinero",
+    artist:
+      "Los Auténticos Decadentes, Julieta Venegas",
+    cover: "/images/song-17.jpg",
+    spotifyId: "4wXjnoLIMTninCnKRgGsQc",
+    spotifyUrl:
+      "https://open.spotify.com/track/4wXjnoLIMTninCnKRgGsQc",
   },
 ];
 
 /* =========================================================
-   COLORES DE CADA CANCIÓN
+   COLORES
 ========================================================= */
 
 const themeById = {
@@ -168,6 +199,41 @@ const themeById = {
     accent: "#F4DEC4",
     soft: "#A36B47",
   },
+
+  "3AIVCSqTfDX9NxStqhi80S": {
+    from: "#523127",
+    to: "#1A0D0A",
+    accent: "#FFE1C2",
+    soft: "#A85E3B",
+  },
+
+  "0SUukeNYkHMk8bxwgGQKJa": {
+    from: "#902F5C",
+    to: "#271020",
+    accent: "#FFD6E8",
+    soft: "#D64C87",
+  },
+
+  "059bcIhyc2SBwm6sw2AZzd": {
+    from: "#376C78",
+    to: "#10242A",
+    accent: "#DDF7F4",
+    soft: "#55A5B1",
+  },
+
+  "17LdmV5cIcTvxB0O18tD2Z": {
+    from: "#7A402E",
+    to: "#24110C",
+    accent: "#FFE0B8",
+    soft: "#C7774F",
+  },
+
+  "4wXjnoLIMTninCnKRgGsQc": {
+    from: "#674E25",
+    to: "#1D160A",
+    accent: "#FFE59D",
+    soft: "#B8943C",
+  },
 };
 
 /* =========================================================
@@ -202,7 +268,49 @@ function Songs({
     songsWithTheme[currentIndex];
 
   /* =========================================================
-     MOSTRAR / OCULTAR SPOTIFY
+     CARRUSEL AUTOMÁTICO
+  ========================================================= */
+
+  useEffect(() => {
+    /*
+      Si Spotify está abierto,
+      detenemos el cambio automático.
+    */
+
+    if (showPlayer) return;
+
+    /*
+      Después de 4 segundos
+      pasamos a la siguiente canción.
+    */
+
+    const timer = setTimeout(() => {
+      setCurrentIndex((current) => {
+        return current ===
+          songsWithTheme.length - 1
+          ? 0
+          : current + 1;
+      });
+    }, 3000);
+
+    /*
+      Cada vez que cambia la canción
+      borramos el timer anterior.
+
+      Así los 4 segundos empiezan de nuevo.
+    */
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [
+    currentIndex,
+    showPlayer,
+    songsWithTheme.length,
+  ]);
+
+  /* =========================================================
+     SPOTIFY
   ========================================================= */
 
   const togglePlayer = () => {
@@ -220,7 +328,7 @@ function Songs({
   };
 
   /* =========================================================
-     CAMBIAR CANCIÓN
+     ANTERIOR
   ========================================================= */
 
   const goToPrevious = useCallback(() => {
@@ -231,6 +339,10 @@ function Songs({
     });
   }, [songsWithTheme.length]);
 
+  /* =========================================================
+     SIGUIENTE
+  ========================================================= */
+
   const goToNext = useCallback(() => {
     setCurrentIndex((current) => {
       return current ===
@@ -239,6 +351,10 @@ function Songs({
         : current + 1;
     });
   }, [songsWithTheme.length]);
+
+  /* =========================================================
+     IR A CANCIÓN
+  ========================================================= */
 
   const goToSong = (index) => {
     setCurrentIndex(index);
@@ -462,7 +578,7 @@ function Songs({
         </div>
 
         {/* =========================================
-            SLIDE
+            CANCIÓN
         ========================================== */}
 
         <AnimatePresence mode="wait">
@@ -514,9 +630,7 @@ function Songs({
                 lg:p-10
               "
             >
-              {/* =================================
-                  PORTADA
-              ================================== */}
+              {/* PORTADA */}
 
               <motion.div
                 initial={{
@@ -556,9 +670,7 @@ function Songs({
                 </div>
               </motion.div>
 
-              {/* =================================
-                  INFORMACIÓN
-              ================================== */}
+              {/* INFORMACIÓN */}
 
               <div
                 className="
@@ -594,9 +706,7 @@ function Songs({
                   {currentSong.artist}
                 </p>
 
-                {/* =================================
-                    BOTONES
-                ================================== */}
+                {/* BOTONES */}
 
                 <div
                   className="

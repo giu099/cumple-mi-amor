@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Heart, RotateCcw, Sparkles } from "lucide-react";
+import SectionHeartDivider from "./SectionHeartDivider";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -130,17 +131,8 @@ function ThingsILove({ photos }) {
               gap-3
             "
           >
-            <div className="h-px w-10 bg-yellow-300/25" />
-
-            <Sparkles
-              size={15}
-              className="text-yellow-300"
-            />
-
-
-            <div className="h-px w-10 bg-yellow-300/25" />
           </div>
-
+          <SectionHeartDivider />
           <h2
             className="
               font-letter

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Heart, Sparkles } from "lucide-react";
-
+import SectionHeartDivider from "./SectionHeartDivider";
 import { relationshipDates } from "../data/siteData";
 
 const ease = [0.22, 1, 0.36, 1];
@@ -369,17 +369,8 @@ function LoveCounters() {
               gap-3
             "
           >
-            <div className="h-px w-9 bg-yellow-300/30" />
-
-            <Sparkles
-              size={16}
-              className="text-yellow-300"
-            />
-
-
-            <div className="h-px w-9 bg-yellow-300/30" />
           </div>
-
+          <SectionHeartDivider />
           <h2
             className="
               font-letter

@@ -588,15 +588,6 @@ function HeroLetter({
                   lg:mx-0
                 "
               >
-                <div className="h-px flex-1 bg-yellow-300/20" />
-
-                <Heart
-                  size={14}
-                  fill="currentColor"
-                  className="text-pink-300"
-                />
-
-                <div className="h-px flex-1 bg-yellow-300/20" />
               </div>
 
               <p

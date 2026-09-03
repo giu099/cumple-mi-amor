@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import { Heart, Sparkles } from "lucide-react";
+import SectionHeartDivider from "./SectionHeartDivider";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -152,17 +153,7 @@ function FinalSection({ photos }) {
             ease,
           }}
         >
-          <div className="mb-5 flex items-center justify-center gap-3">
-            <div className="h-px w-10 bg-yellow-300/30" />
-
-            <Sparkles
-              size={16}
-              className="text-yellow-300"
-            />
-
-
-            <div className="h-px w-10 bg-yellow-300/30" />
-          </div>
+          <SectionHeartDivider />
 
           <h2 className="font-letter text-6xl leading-tight text-white md:text-8xl">
             Feliz cumpleaños,
@@ -317,11 +308,6 @@ function FinalSection({ photos }) {
             ease,
           }}
         >
-          <Heart
-            size={20}
-            fill="currentColor"
-            className="mx-auto text-pink-300"
-          />
 
           <p className="font-elegant mx-auto mt-6 max-w-2xl text-lg leading-8 text-violet-100/65 md:text-xl">
             Espero poder seguir estando en muchos de tus cumpleaños,

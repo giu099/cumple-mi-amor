@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import SectionHeartDivider from "./SectionHeartDivider";
 import {
   ChevronLeft,
   ChevronRight,
@@ -190,17 +191,7 @@ function MemoriesGallery({ photos }) {
             ease,
           }}
         >
-          <div className="mb-4 flex items-center justify-center gap-3">
-            <div className="h-px w-10 bg-yellow-300/30" />
-
-            <Sparkles
-              size={16}
-              className="text-yellow-300"
-            />
-
-
-            <div className="h-px w-10 bg-yellow-300/30" />
-          </div>
+          <SectionHeartDivider />
 
           <h2
             className="
