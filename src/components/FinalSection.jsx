@@ -135,7 +135,13 @@ function FinalSection({ photos }) {
         {/* CABECERA */}
 
         <motion.div
-          className="mx-auto mb-20 max-w-3xl text-center"
+          className="
+            mx-auto
+            mb-20
+            w-full
+            max-w-3xl
+            text-center
+          "
           initial={{
             opacity: 0,
             y: 25,
@@ -155,15 +161,49 @@ function FinalSection({ photos }) {
         >
           <SectionHeartDivider />
 
-          <h2 className="font-letter text-6xl leading-tight text-white md:text-8xl">
+          <h2
+            className="
+              font-letter
+              mx-auto
+              max-w-full
+              text-[clamp(42px,12vw,56px)]
+              leading-[1.05]
+              text-white
+
+              md:text-8xl
+              md:leading-tight
+            "
+          >
             Feliz cumpleaños,
           </h2>
 
-          <p className="font-letter mt-1 text-5xl text-violet-300 md:text-7xl">
+          <p
+            className="
+              font-letter
+              mt-2
+              text-[clamp(38px,10.5vw,50px)]
+              leading-tight
+              text-violet-300
+
+              md:mt-1
+              md:text-7xl
+            "
+          >
             mi amor.
           </p>
 
-          <p className="font-elegant mx-auto mt-7 max-w-2xl text-lg leading-8 text-violet-100/55 md:text-xl">
+          <p
+            className="
+              font-elegant
+              mx-auto
+              mt-7
+              max-w-2xl
+              text-lg
+              leading-8
+              text-violet-100/55
+              md:text-xl
+            "
+          >
             Quería que este regalo fuera algo que pudieras volver a mirar
             cuando quieras y recordar lo importante que sos para mí.
           </p>
@@ -229,7 +269,7 @@ function FinalSection({ photos }) {
                 xl:w-[345px]
               "
             >
-              {/* FOTO COMPLETA */}
+              {/* FOTO */}
 
               <div
                 className="
@@ -308,7 +348,6 @@ function FinalSection({ photos }) {
             ease,
           }}
         >
-
           <p className="font-elegant mx-auto mt-6 max-w-2xl text-lg leading-8 text-violet-100/65 md:text-xl">
             Espero poder seguir estando en muchos de tus cumpleaños,
             seguir acompañándote, viéndote crecer, riéndome con vos y

@@ -29,9 +29,7 @@ function HeroLetter({
         py-16
       "
     >
-      {/* =========================================
-          FONDO
-      ========================================== */}
+      {/* FONDO */}
 
       <div
         className="
@@ -62,9 +60,7 @@ function HeroLetter({
         "
       />
 
-      {/* =========================================
-          ESTRELLAS DEL FONDO
-      ========================================== */}
+      {/* ESTRELLAS */}
 
       <span
         className="
@@ -130,9 +126,7 @@ function HeroLetter({
           justify-center
         "
       >
-        {/* =====================================================
-            SOBRE CERRADO / ABRIENDO
-        ====================================================== */}
+        {/* SOBRE CERRADO */}
 
         {(isClosed || isOpening) && (
           <motion.div
@@ -158,8 +152,6 @@ function HeroLetter({
               text-center
             "
           >
-            {/* SOBRE */}
-
             <motion.button
               type="button"
               onClick={onOpen}
@@ -191,7 +183,7 @@ function HeroLetter({
               "
               aria-label="Abrir carta"
             >
-              {/* sombra */}
+              {/* SOMBRA */}
 
               <div
                 className="
@@ -207,7 +199,7 @@ function HeroLetter({
                 "
               />
 
-              {/* cuerpo del sobre */}
+              {/* CUERPO DEL SOBRE */}
 
               <div
                 className="
@@ -224,7 +216,7 @@ function HeroLetter({
                   shadow-2xl
                 "
               >
-                {/* textura */}
+                {/* TEXTURA */}
 
                 <div
                   className="
@@ -238,7 +230,7 @@ function HeroLetter({
                   "
                 />
 
-                {/* luz detrás del sello */}
+                {/* LUZ DETRÁS DEL SELLO */}
 
                 <div
                   className="
@@ -256,7 +248,7 @@ function HeroLetter({
                   "
                 />
 
-                {/* flap superior */}
+                {/* FLAP SUPERIOR */}
 
                 <motion.div
                   animate={{
@@ -279,7 +271,7 @@ function HeroLetter({
                   "
                 />
 
-                {/* triángulo izquierda */}
+                {/* TRIÁNGULO IZQUIERDA */}
 
                 <div
                   className="
@@ -293,7 +285,7 @@ function HeroLetter({
                   "
                 />
 
-                {/* triángulo derecha */}
+                {/* TRIÁNGULO DERECHA */}
 
                 <div
                   className="
@@ -307,7 +299,7 @@ function HeroLetter({
                   "
                 />
 
-                {/* parte frontal */}
+                {/* PARTE FRONTAL */}
 
                 <div
                   className="
@@ -321,7 +313,7 @@ function HeroLetter({
                   "
                 />
 
-                {/* sello original */}
+                {/* SELLO */}
 
                 <motion.div
                   animate={{
@@ -335,10 +327,12 @@ function HeroLetter({
                   className="
                     absolute
                     left-1/2
-                    top-[53%]
+                    top-[44%]
                     z-20
                     -translate-x-1/2
                     -translate-y-1/2
+
+                    md:top-[53%]
                   "
                 >
                   <SunFlowerSeal
@@ -346,26 +340,29 @@ function HeroLetter({
                   />
                 </motion.div>
 
-                {/* texto inferior */}
+                {/* TEXTO INFERIOR */}
 
                 <div
                   className="
                     pointer-events-none
                     absolute
-                    bottom-6
+                    bottom-[10px]
                     left-1/2
                     z-20
                     -translate-x-1/2
                     whitespace-nowrap
+
+                    md:bottom-6
                   "
                 >
                   <p
                     className="
                       font-elegant
-                      text-sm
+                      text-[16px]
                       italic
                       text-purple-950/55
-                      sm:text-base
+
+                      md:text-base
                     "
                   >
                     Tocá el sello para abrir
@@ -400,9 +397,7 @@ function HeroLetter({
           </motion.div>
         )}
 
-        {/* =====================================================
-            CARTA ABIERTA
-        ====================================================== */}
+        {/* CARTA ABIERTA */}
 
         {isOpened && (
           <motion.div
@@ -575,8 +570,6 @@ function HeroLetter({
                 </p>
               </div>
 
-              {/* separador */}
-
               <div
                 className="
                   mx-auto
@@ -587,8 +580,7 @@ function HeroLetter({
                   gap-3
                   lg:mx-0
                 "
-              >
-              </div>
+              />
 
               <p
                 className="

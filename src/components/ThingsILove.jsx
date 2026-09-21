@@ -60,9 +60,7 @@ function ThingsILove({ photos }) {
         md:py-32
       "
     >
-      {/* =========================================
-          FONDO
-      ========================================== */}
+      {/* FONDO */}
 
       <div
         className="
@@ -93,9 +91,7 @@ function ThingsILove({ photos }) {
       />
 
       <div className="relative mx-auto max-w-6xl">
-        {/* =========================================
-            CABECERA
-        ========================================== */}
+        {/* CABECERA */}
 
         <motion.div
           initial={{
@@ -130,9 +126,10 @@ function ThingsILove({ photos }) {
               justify-center
               gap-3
             "
-          >
-          </div>
+          />
+
           <SectionHeartDivider />
+
           <h2
             className="
               font-letter
@@ -186,9 +183,7 @@ function ThingsILove({ photos }) {
           </p>
         </motion.div>
 
-        {/* =========================================
-            CARDS
-        ========================================== */}
+        {/* CARDS */}
 
         <div
           className="
@@ -196,7 +191,7 @@ function ThingsILove({ photos }) {
             grid
             max-w-5xl
             grid-cols-1
-            gap-10
+            gap-14
             md:grid-cols-2
             md:gap-x-16
             md:gap-y-12
@@ -227,11 +222,14 @@ function ThingsILove({ photos }) {
                 }}
                 className="
                   mx-auto
-                  h-[490px]
+                  h-[500px]
                   w-full
-                  max-w-[365px]
+                  max-w-[340px]
                   cursor-pointer
                   [perspective:1200px]
+
+                  md:h-[490px]
+                  md:max-w-[365px]
                 "
                 onClick={() => handleCardClick(index)}
               >
@@ -252,19 +250,20 @@ function ThingsILove({ photos }) {
                     [transform-style:preserve-3d]
                   "
                 >
-                  {/* =================================
-                      FRENTE
-                  ================================== */}
+                  {/* FRENTE */}
 
                   <div
                     className="
                       absolute
                       inset-0
                       bg-[#fffaf0]
-                      p-4
-                      pb-6
+                      p-3
+                      pb-5
                       shadow-2xl
                       [backface-visibility:hidden]
+
+                      md:p-4
+                      md:pb-6
                     "
                     style={{
                       transform: `rotate(${card.rotation}deg)`,
@@ -275,9 +274,11 @@ function ThingsILove({ photos }) {
                     <div
                       className="
                         relative
-                        h-[385px]
+                        h-[360px]
                         overflow-hidden
                         bg-[#e8dfd5]
+
+                        md:h-[385px]
                       "
                     >
                       <img
@@ -324,8 +325,12 @@ function ThingsILove({ photos }) {
                         className="
                           font-letter
                           mt-4
-                          text-3xl
+                          text-[30px]
+                          leading-[1.05]
                           text-purple-900
+
+                          md:text-3xl
+                          md:leading-normal
                         "
                       >
                         {card.title}
@@ -333,11 +338,15 @@ function ThingsILove({ photos }) {
 
                       <p
                         className="
-                          mt-1
-                          text-[10px]
+                          mt-2
+                          text-[9px]
                           uppercase
-                          tracking-[0.25em]
+                          tracking-[0.22em]
                           text-purple-400/60
+
+                          md:mt-1
+                          md:text-[10px]
+                          md:tracking-[0.25em]
                         "
                       >
                         Tocá para descubrir
@@ -345,9 +354,7 @@ function ThingsILove({ photos }) {
                     </div>
                   </div>
 
-                  {/* =================================
-                      DORSO
-                  ================================== */}
+                  {/* DORSO */}
 
                   <div
                     className="
@@ -361,14 +368,17 @@ function ThingsILove({ photos }) {
                       from-[#351244]
                       via-[#281033]
                       to-[#19091f]
-                      px-8
-                      py-8
+                      px-5
+                      py-6
                       shadow-2xl
                       [backface-visibility:hidden]
                       [transform:rotateY(180deg)]
+
+                      md:px-8
+                      md:py-8
                     "
                   >
-                    {/* ESQUINAS DECORATIVAS */}
+                    {/* ESQUINAS */}
 
                     <div
                       className="
@@ -406,26 +416,26 @@ function ThingsILove({ photos }) {
                         text-center
                       "
                     >
-                      {/* CORAZÓN */}
-
                       <Heart
                         size={19}
                         fill="currentColor"
                         className="
-                          mb-7
+                          mb-4
                           text-pink-300
+
+                          md:mb-7
                         "
                       />
 
-                      {/* DECORACIÓN */}
-
                       <div
                         className="
-                          mb-6
+                          mb-4
                           flex
                           items-center
                           justify-center
                           gap-3
+
+                          md:mb-6
                         "
                       >
                         <div className="h-px w-8 bg-yellow-300/30" />
@@ -438,53 +448,57 @@ function ThingsILove({ photos }) {
                         <div className="h-px w-8 bg-yellow-300/30" />
                       </div>
 
-                      {/* TÍTULO */}
-
                       <h3
                         className="
                           font-letter
-                          text-4xl
-                          leading-tight
+                          text-[34px]
+                          leading-[1.05]
                           text-white
+
                           md:text-5xl
+                          md:leading-tight
                         "
                       >
                         {card.title}
                       </h3>
 
-                      {/* TEXTO */}
-
                       <p
                         className="
                           font-elegant
-                          mt-8
-                          text-lg
+                          mt-5
+                          text-[18px]
                           leading-7
                           text-violet-100/75
+
+                          md:mt-8
+                          md:text-lg
                         "
                       >
                         {card.text}
                       </p>
 
-                      {/* VOLVER */}
-
                       <div
                         className="
-                          mt-9
+                          mt-6
                           flex
                           items-center
                           justify-center
                           gap-2
                           text-violet-200/35
+
+                          md:mt-9
                         "
                       >
                         <RotateCcw size={14} />
 
                         <p
                           className="
-                            text-xs
+                            text-[10px]
                             uppercase
-                            tracking-[0.2em]
+                            tracking-[0.18em]
+
+                            md:text-xs
+                            md:tracking-[0.2em]
                           "
                         >
                           Tocá para volver
@@ -498,9 +512,7 @@ function ThingsILove({ photos }) {
           })}
         </div>
 
-        {/* =========================================
-            FRASE FINAL
-        ========================================== */}
+        {/* FRASE FINAL */}
 
         <motion.div
           initial={{
