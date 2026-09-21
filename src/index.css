@@ -6,8 +6,12 @@
 
 :root {
   font-family: Arial, Helvetica, sans-serif;
+
   background: #12081f;
   color: white;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
 }
 
 /* =========================================
@@ -16,28 +20,50 @@
 
 html {
   scroll-behavior: smooth;
+
+  /*
+    Escritorio mantiene el tamaño original.
+  */
   font-size: 16px;
+
+  /*
+    Evita que iPhone / Safari o algunos
+    navegadores Android agranden o achiquen
+    textos por su cuenta.
+  */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
+/* =========================================
+   ESCALA RESPONSIVE PARA CELULARES
+========================================= */
+
 /*
-  En celular aumentamos la escala general.
+  En mobile aumentamos la escala general.
 
-  Muchas medidas de Tailwind usan rem,
-  por lo que esto agranda de manera pareja:
-  - textos
-  - espacios
-  - paddings
-  - margins
-  - gaps
-  - etc.
+  clamp significa:
 
-  En computadora sigue siendo 16px,
-  así que no cambia el diseño de escritorio.
+  mínimo: 18px
+  ideal: 5vw
+  máximo: 20px
+
+  Ejemplos aproximados:
+
+  celular de 320px  → 18px
+  celular de 360px  → 18px
+  celular de 375px  → 18.75px
+  celular de 384px  → 19.2px
+  iPhone 15 ~393px  → 19.65px
+  celular de 400px+ → 20px
+
+  De esta manera no depende de un modelo
+  específico de teléfono.
 */
 
 @media (max-width: 767px) {
   html {
-    font-size: 18px;
+    font-size: clamp(18px, 5vw, 20px);
   }
 }
 
@@ -51,6 +77,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
 
+  overflow-x: hidden;
+
   background:
     radial-gradient(
       circle at top,
@@ -61,11 +89,34 @@ body {
 }
 
 /* =========================================
+   ROOT DE REACT
+========================================= */
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* =========================================
    TODOS LOS ELEMENTOS
 ========================================= */
 
 * {
   box-sizing: border-box;
+}
+
+/* =========================================
+   IMÁGENES
+========================================= */
+
+/*
+  Evita que una imagen sea más ancha
+  que la pantalla en celular.
+*/
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* =========================================
