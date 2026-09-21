@@ -6,14 +6,44 @@
 
 :root {
   font-family: Arial, Helvetica, sans-serif;
-
   background: #12081f;
   color: white;
 }
 
+/* =========================================
+   HTML
+========================================= */
+
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
+
+/*
+  En celular aumentamos la escala general.
+
+  Muchas medidas de Tailwind usan rem,
+  por lo que esto agranda de manera pareja:
+  - textos
+  - espacios
+  - paddings
+  - margins
+  - gaps
+  - etc.
+
+  En computadora sigue siendo 16px,
+  así que no cambia el diseño de escritorio.
+*/
+
+@media (max-width: 767px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* =========================================
+   BODY
+========================================= */
 
 body {
   margin: 0;
@@ -30,34 +60,34 @@ body {
     #12081f;
 }
 
+/* =========================================
+   TODOS LOS ELEMENTOS
+========================================= */
+
 * {
   box-sizing: border-box;
 }
+
+/* =========================================
+   BOTONES
+========================================= */
 
 button {
   font: inherit;
 }
 
 /* =========================================
-   TIPOGRAFÍAS
+   FUENTE DE TÍTULOS
 ========================================= */
-
-/*
-  Títulos principales
-
-  Antes usábamos Parisienne.
-  Ahora usamos DM Serif Display.
-*/
 
 .font-letter {
   font-family: "DM Serif Display", serif;
   font-weight: 400;
 }
 
-/*
-  Textos románticos, párrafos,
-  subtítulos, etc.
-*/
+/* =========================================
+   FUENTE DE TEXTOS
+========================================= */
 
 .font-elegant {
   font-family: "Cormorant Garamond", serif;
