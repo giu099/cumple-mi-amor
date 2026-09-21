@@ -421,7 +421,7 @@ function FinalSection({ photos }) {
                   y todos los días de mi vida.
                 </p>
 
-                <p className="font-elegant mx-auto mt-8 max-w-xl text-lg italic leading-8 text-violet-100/50">
+                <p className="font-elegant mx-auto mt-8 max-w-xl text-xl italic leading-8 text-violet-200/70 md:text-2xl">
                   Feliz cumpleaños, hermosa. Espero que te haya gustado mucho este regalito mio.
                 </p>
 

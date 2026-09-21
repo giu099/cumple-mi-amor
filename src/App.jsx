@@ -280,7 +280,7 @@ function App() {
             photos={[
               photos[38], // photo-39
               photos[37], // photo-38
-              photos[40], // photo-41
+              photos[42], // photo-41
               photos[41], // photo-42
             ]}
           />

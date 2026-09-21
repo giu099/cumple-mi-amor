@@ -102,7 +102,7 @@ export const songs = [
 ];
 
 export const photos = Array.from(
-  { length: 42 },
+  { length: 44 },
   (_, index) =>
     `/images/photo-${String(index + 1).padStart(2, "0")}.jpg`
 );

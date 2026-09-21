@@ -558,7 +558,7 @@ function HeroLetter({
 
                 <p>
                   Algo que no fuera solamente una carta, sino algo que puedas
-                  volver a ver cada vez que quieras; un lugar donde estén
+                  volver a ver cada vez que quieras, un lugar donde estén
                   guardados algunos de nuestros recuerdos más hermosos y que,
                   sobre todo, también pueda mostrar todo lo lindo que tenemos.
                 </p>
